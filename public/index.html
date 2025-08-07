@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+  <meta charset="UTF-8">
+  <title>تسجيل الدخول - اخوتى</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      padding-top: 100px;
+      background-color: #f0f0f0;
+    }
+    input {
+      padding: 10px;
+      margin: 10px;
+      width: 250px;
+    }
+    button {
+      padding: 10px 20px;
+      cursor: pointer;
+    }
+    .error {
+      color: red;
+    }
+  </style>
+</head>
+<body>
+  <h2>تسجيل الدخول للمحادثة اخوتى</h2>
+  
+  <form id="loginForm">
+    <input type="text" id="username" placeholder="الاسم" required><br>
+    <input type="password" id="password" placeholder="كلمة المرور" required><br>
+    <button type="submit">دخول</button>
+  </form>
+
+  <p class="error" id="errorMessage"></p>
+
+  <script>
+    document.getElementById('loginForm').addEventListener('submit', function (e) {
+      e.preventDefault();
+
+      const username = document.getElementById('username').value.trim();
+      const password = document.getElementById('password').value.trim();
+
+      const validUsers = [
+        { name: 'Loay', password: 'codecrafter' },
+        { name: 'Amr', password: 'Eng' }
+		{ name: 'Mama', password: 'Ghada' }
+		{ name: 'Abrar', password: 'Bee' }
+		{ name: 'Eiad', password: 'Eiad' }
+		{ name: 'Mrawan', password: 'Tizo' }
+      ];
+
+      const isValid = validUsers.some(user => user.name === username && user.password === password);
+
+      if (isValid) {
+        localStorage.setItem('username', username); // تخزين الاسم
+        window.location.href = 'chat.html'; // الانتقال إلى صفحة المحادثة
+      } else {
+        document.getElementById('errorMessage').textContent = 'الاسم أو كلمة المرور غير صحيحة';
+      }
+    });
+  </script>
+</body>
+</html>

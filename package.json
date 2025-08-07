@@ -1,0 +1,18 @@
+{
+  "name": "أخوتى",
+  "version": "1.0.0",
+  "description": "موقع لبيت حامد فقط",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "dotenv": "^8.2.0",
+    "express": "^4.21.2",
+    "mongodb": "^3.6.12",
+    "socket.io": "^4.8.1"
+  }
+}

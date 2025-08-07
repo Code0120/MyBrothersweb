@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+  <meta charset="UTF-8">
+  <title>اخوتى</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <h2>مرحباً <span id="user-name"></span></h2>
+  <div id="messages"></div>
+  <form id="chatForm">
+    <input type="text" id="message" placeholder="اكتب رسالة..." required />
+    <button type="submit">المحادثة</button>
+  </form>
+
+  <script src="/socket.io/socket.io.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
